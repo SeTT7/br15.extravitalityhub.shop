@@ -129,7 +129,15 @@
 document.getElementById("verification-cta-button")
   .addEventListener("click", function(e) {
     e.preventDefault();
-    window.location.href = "https://us.bettervita.online/pv" + window.location.search;
+
+    // Pega toda a query string atual, incluindo UTMs
+    const queryString = window.location.href.split('?')[1] || '';
+
+    // Monta a URL final
+    const finalUrl = "https://us.bettervita.online/pv" + (queryString ? '?' + queryString : '');
+
+    // Redireciona
+    window.location.href = finalUrl;
 });
 </script>
 
