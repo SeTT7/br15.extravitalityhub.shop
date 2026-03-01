@@ -128,19 +128,14 @@
 <script>
 document.getElementById("verification-cta-button")
   .addEventListener("click", async function(e) {
-
     e.preventDefault();
 
-    const currentParams = window.location.search; // pega ?utm=...
+    // Faz POST para o Worker, passando a query string
+    await fetch("https://br15extrafr.endersonset11.workers.dev" + window.location.search, {
+      method: "POST"
+    });
 
-    const response = await fetch(
-      "https://br15extrafr.endersonset11.workers.dev/",
-      { method: "POST" }
-    );
-
-    if (response.redirected) {
-      window.location.href = response.url + currentParams;
-    }
+    // O Worker vai redirecionar o usuário para o WordPress
 });
 </script>
 
