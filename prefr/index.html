@@ -127,15 +127,9 @@
 
 <script>
 document.getElementById("verification-cta-button")
-  .addEventListener("click", async function(e) {
+  .addEventListener("click", function(e) {
     e.preventDefault();
-
-    // Faz POST para o Worker, passando a query string
-    await fetch("https://br15extrafr.endersonset11.workers.dev" + window.location.search, {
-      method: "POST"
-    });
-
-    // O Worker vai redirecionar o usuário para o WordPress
+    window.location.href = "https://us.bettervita.online/pv" + window.location.search;
 });
 </script>
 
